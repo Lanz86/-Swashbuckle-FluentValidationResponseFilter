@@ -27,5 +27,5 @@ jobs:
     - name: Publish  
       uses: brandedoutcast/publish-nuget@v2.5.2
       with:
-        PROJECT_FILE_PATH: src/FluentValidationResponseFilter/FluentValidationResponseFiltercsproj 
+        PROJECT_FILE_PATH: src/FluentValidationResponseFilter/FluentValidationResponseFilter.csproj 
         NUGET_KEY: ${{secrets.NUGET_API_KEY}} 
