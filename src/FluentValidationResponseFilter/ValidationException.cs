@@ -38,7 +38,7 @@ namespace LnzSoftware.Swashbuckle.FluentValidationResponseFilter
             {
                 return ValidationFailures
                     .GroupBy(e => e.PropertyName, e => e.ErrorMessage)
-                    .ToDictionary(failureGroup => failureGroup.Key, failureGroup => failureGroup.ToArray());
+                    .ToDictionary(failureGroup => failureGroup.Key??Guid.NewGuid().ToString(), failureGroup => failureGroup.ToArray());
             }
         }
 

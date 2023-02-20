@@ -49,7 +49,7 @@ namespace LnzSoftware.Swashbuckle.FluentValidationResponseFilter
                     foreach (var rule in validationRoules.Rules)
                     {
                         List<string> errorMessages = new List<string>();
-                        var expression = string.Join(".", rule.Expression.ToString().Split('.').Skip(1).Take(1));
+                        var expression = rule.Expression != null ? string.Join(".", rule.Expression?.ToString()?.Split('.')?.Skip(1)?.Take(1)) : null;
                         foreach (var component in rule.Components)
                         {
                             failures.Add(new ValidationFailure { ErrorMessage = component.GetUnformattedErrorMessage(), PropertyName = expression, ErrorCode = component.ErrorCode });
